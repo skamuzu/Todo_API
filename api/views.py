@@ -58,6 +58,8 @@ def task_item(request,id):
         return Response(status=status.HTTP_204_NO_CONTENT)
      
 @api_view(["POST"]) 
+@authentication_classes([])  
+@permission_classes([])  
 def sign_up(request):
     serializer = RegisterSerializer(data = request.data)
     if serializer.is_valid():
